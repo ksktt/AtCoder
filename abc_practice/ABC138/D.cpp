@@ -22,7 +22,7 @@ int main() {
     }
     vector<int> ans(n, -1);
     queue<int> que;
-	que.push(0);
+	que.push(0); 
     ans[0] = c[0];
 	while (que.size() > 0) {
 		int i = que.front();
