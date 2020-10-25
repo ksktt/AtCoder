@@ -10,8 +10,8 @@ double dist(int xi, int xj, int yi, int yj) {
 int main() {
     int n;
     cin >> n;
-    vector<int> x;
-    vector<int> y;
+    vector<int> x(n);
+    vector<int> y(n);
     vector<int> v(n);
     for (int i = 0; i < n; i++) {
         cin >> x[i] >> y[i];
