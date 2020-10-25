@@ -31,7 +31,11 @@ int main() {
     cin >> x >> y;
     ll a, b;
     ll ans;
-    if ((- x + 2 * y) % 3 != 0 || (2 * x - y) % 3 != 0) {
+    if ((x + y) % 3 != 0) {
+        cout << 0 << endl;
+        return  0;
+    }
+    if ((- x + 2 * y) / 3 < 0 || (2 * x - y) / 3 < 0) {
         cout << 0 << endl;
         return 0;
     }
