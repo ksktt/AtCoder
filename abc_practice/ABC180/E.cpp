@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 int N = 17, M = (1 << 17) + 1;
-int dp[M][N];
 vector<int> x(N), y(N), z(N);
 
 int cost(int a, int b) {
@@ -14,6 +13,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> x[i] >> y[i] >> z[i];
     }
+    int m = (1 << n) + 1;
+    int dp[m][n];
     memset(dp, 0x3f, sizeof(dp));
     dp[0][0] = 0;
     for (int i = 1; i < (1 << n); i++) {
