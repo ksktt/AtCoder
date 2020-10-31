@@ -6,14 +6,9 @@ int main() {
     ll x, y, a, b;
     cin >> x >> y >> a >> b;
     ll val = 0;
-    while (true) {
-        if (x * (a - 1) < b && x * a < y) {
-            x = x * a;
-            val++;
-        }
-        else {
-            break;
-        }
+    while ((double)a * x <= 2e18 && (a - 1) * x <= b && a * x < y) {
+        x *= a;
+        val++;
     }
     val += (y - 1 - x) / b;
     cout << val << endl;
