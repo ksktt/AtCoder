@@ -11,7 +11,7 @@ int main() {
     vector<int> row(H, 0), col(W, 0);
     int max_row, max_col, max_row_ele, max_col_ele;
     for (int i = 0; i < M; i++) {
-        row[h[i] - 1]++;
+        row[h[i] - 1]++; 
         col[w[i] - 1]++;
     }
     max_row = max_element(row.begin(), row.end()) - row.begin();
