@@ -3,10 +3,9 @@ using namespace std;
 const int INF = 100000000;
 typedef pair<int, int> P;
 int d[20][20];
-char s[20][20];
-
+ 
 int dx[4] = {1, 0, -1, 0}, dy[4] = {0, 1, 0, -1};
-int bfs(int h, int w, int sx, int sy, int gx, int gy) {
+int bfs(int h, int w, int sx, int sy, int gx, int gy, vector<vector<char>> &s) {
     queue<P> que;
     for (int i = 0; i < h; i++) {
         for (int j = 0; j < w; j++) {
@@ -15,7 +14,7 @@ int bfs(int h, int w, int sx, int sy, int gx, int gy) {
     }
     que.push(P(sx, sy));
     d[sx][sy] = 0;
-
+ 
     while (que.size()) {
         P p = que.front();
         que.pop();
@@ -31,7 +30,7 @@ int bfs(int h, int w, int sx, int sy, int gx, int gy) {
     }
     return d[gx][gy];
 }
-
+ 
 int main() {
     int h, w;
     cin >> h >> w;
@@ -46,7 +45,7 @@ int main() {
         for (int j = 0; j < w; j++) {
             for (int k = 0; k < h; k++) {
                 for (int l = 0; l < w; l++) {
-                    ans = max(ans, bfs(h, w, i, j, k ,l));
+                    ans = max(ans, bfs(h, w, i, j, k ,l, s));
                 }
             }
         }
